@@ -70,6 +70,11 @@ https://github.com/petewarden/pyparallelcurl
 
 that in its turn uses pycurl/libcurl to do its magic. pyparallelcurl.py is included in this git repository for convenience.
 
+## The format of generatedrequests.py
+
+There is no reason to only have the Apache combined log format as input. Any log format with time stamps should work if a script is made to make a generatedrequests.py file. The format of generatedrequests.py is jus a tuple of tuples, where each tuple has a time stamp in seconds (starting at zero) as the first item and the request (without the server part) as the second.
+
+
 ## Known bugs
 
 playlogfiletoserver assumes the lines in the Apache log files are sorted by time. may in some cases not be entirely true.
