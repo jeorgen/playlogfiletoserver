@@ -63,7 +63,12 @@ cat areport.txt | sort -rn |less
 
 
 ## pyparallelcurl
-playlogfiletoserver uses Pete Warden's pyparallelcurl that in its turn uses pycurl/libcurl to do its magic. pyparallelcurl is included in this git repository for convenience:
+
+playlogfiletoserver uses Pete Warden's pyparallelcurl 
+
+https://github.com/petewarden/pyparallelcurl
+
+that in its turn uses pycurl/libcurl to do its magic. pyparallelcurl.py is included in this git repository for convenience.
 
 
 
