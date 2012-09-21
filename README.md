@@ -70,6 +70,14 @@ https://github.com/petewarden/pyparallelcurl
 
 that in its turn uses pycurl/libcurl to do its magic. pyparallelcurl.py is included in this git repository for convenience.
 
+## Known bugs
+
+playlogfiletoserver assumes the lines in the Apache log files are sorted by time. may in some cases not be entirely true.
+
+I do not think it handles single quotes in log files gracefully when creating the data structure.
+
+There are probably more bugs and/or faulty assumptions.
+
 
 
 
