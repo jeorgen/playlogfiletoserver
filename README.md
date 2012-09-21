@@ -1,7 +1,7 @@
 playlogfiletoserver
 ===================
 
-These python scripts take a log file in the standard Apache combined format and load test a server of your choice (like a development server). You can speed up or slow down the simulation. It prints out a report on how long each request took, which you can use to do comparisons between different server configurations with regards to performance. It is tested on Ubuntu 12.04 with pycurl installed.
+These python scripts take a log file in the standard Apache combined format and load test a server of your choice (like a testing or staging server). You can speed up or slow down the simulation. It prints out a report on how long each request took, which you can use to do comparisons between different server configurations with regards to performance.
 
 ## Requirements
 It needs pycurl to be installed and has been tested on Ubuntu 12.04 Linux.
