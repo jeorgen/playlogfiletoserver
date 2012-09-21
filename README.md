@@ -79,8 +79,6 @@ There is no reason to only have the Apache combined log format as input. Any log
 
 playlogfiletoserver assumes the lines in the Apache log files are sorted by time. may in some cases not be entirely true.
 
-I do not think it handles single quotes in log files gracefully when creating the data structure.
-
 There are probably more bugs and/or faulty assumptions.
 
 
