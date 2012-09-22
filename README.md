@@ -1,21 +1,34 @@
 playlogfiletoserver
 ===================
 
-These python scripts take a log file in the standard Apache combined format and load test a server of your choice (like a testing or staging server). You can speed up or slow down the simulation. It prints out a report on how long each request took, which you can use to do comparisons between different server configurations with regards to performance.
+These python scripts take a log file in the standard Apache combined format and load test a server of your choice (like for eaxmple a testing or staging server). Requests will be made in parallel if necessary, to follow the timing of the log file. You can speed up or slow down the simulation. It prints out a report on how long each request took, which you can use to do comparisons between different server configurations with regards to performance.
 
 ## Requirements
 It needs pycurl to be installed and has been tested on Ubuntu 12.04 Linux.
 
+It parses log files in the Apache combined log format, which in practice can look something like this in the log file:
+    
+```
+255.127.63.31 - - [01/Sep/2012:04:04:52 +0200] "GET /images/my_picture.png HTTP/1.1" 200 117 "http://www.example.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11"
+```
+
+The format specification looks like this in the Apache configuration file:
+
+```
+LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+```
+
+
 
 ## How to use it
 
-First get an appropriate time slice from an Apache log file in the combined log format. I used a one hour time slice which in that particular log file meant 9000 lines. Name the log file access_log and place it in the same directory as preparelogfile.py, then run from the command line:
+First get an appropriate time slice from an Apache log file in the combined log format. I used a one hour time slice which in that particular log file meant around 9000 lines. Name the log file access_log and place it in the same directory as preparelogfile.py, then run from the command line:
     
 ```
 python preparelogfile.py
 ```
 
-...and you should get a new python module called generatedrequests.py. It is a good idea to just use a slice of an Apache log file. I used 9000 lines.
+...and you should get a new python module called generatedrequests.py.
 
 Then, configure these lines in the playlogfiletoserver.py to your taste:
     
