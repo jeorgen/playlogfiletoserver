@@ -1,3 +1,4 @@
+# By Jorgen Modin jorgen@webworks.se 2012-2014, licensed under the MIT license
 import datetime
 import time
 from generatedrequests import requests as therequests
@@ -49,7 +50,7 @@ def timetogo(request):
     reqtime = request[0]
     t = datetime.datetime.now()
     now = time.mktime(t.timetuple())
-    return reqtime + starttime <= now * speedup
+    return reqtime  <= (now - starttime) * speedup
 
 
 for request in therequests:
